@@ -58,7 +58,7 @@ print(len(INGREDIENT_DICTIONARY))
 class TasteTester(nn.Module):
     def __init__(self, input_size, hidden_size):
         super(TasteTester, self).__init__()
-        self.embed = nn.Embedding(len(INGREDIENT_DICTIONARY), INGREDIENT_EMBEDDING_SIZE)
+        self.embed = nn.Embedding(len(INGREDIENT_DICTIONARY) + 1, INGREDIENT_EMBEDDING_SIZE)
         self.linear = nn.Linear(INGREDIENT_EMBEDDING_SIZE, hidden_size)
         self.do = nn.Dropout(p=0.05)
         self.l1 = nn.Linear(3000, 1)
