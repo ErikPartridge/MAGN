@@ -89,6 +89,6 @@ for epoch in range(40):  # loop over the dataset multiple times
         optimizer.step()
         
 print(tt.embed.weight)
-
+print(INGREDIENT_DICTIONARY.values())
 writer.add_embedding(tt.embed.weight, metadata=INGREDIENT_DICTIONARY.values())
 writer.close()
