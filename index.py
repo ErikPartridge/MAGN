@@ -86,4 +86,4 @@ for epoch in range(40):  # loop over the dataset multiple times
         loss.backward()
         optimizer.step()
         
-print(tt.embed.weights)
+print(tt.embed.weight)
