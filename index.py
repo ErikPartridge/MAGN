@@ -85,3 +85,5 @@ for epoch in range(40):  # loop over the dataset multiple times
         loss = criterion(outputs, Variable(torch.from_numpy(np.array([ys[i]])).float()))
         loss.backward()
         optimizer.step()
+        
+print(tt.embed.weights)
