@@ -56,9 +56,9 @@ print(len(INGREDIENT_DICTIONARY))
 
 ##
 class TasteTester(nn.Module):
-    def __init__(self, len(INGREDIENT_DICTIONARY), hidden_size):
+    def __init__(self, input_size, hidden_size):
         super(TasteTester, self).__init__()
-        self.embed = nn.Embedding(input_size, INGREDIENT_EMBEDDING_SIZE)
+        self.embed = nn.Embedding(len(INGREDIENT_DICTIONARY), INGREDIENT_EMBEDDING_SIZE)
         self.linear = nn.Linear(INGREDIENT_EMBEDDING_SIZE, hidden_size)
         self.do = nn.Dropout(p=0.05)
         self.l1 = nn.Linear(3000, 1)
@@ -95,5 +95,5 @@ for epoch in range(40):  # loop over the dataset multiple times
         
 print(tt.embed.weight)
 print(INGREDIENT_DICTIONARY.items())
-writer.add_embedding(tt.embed.weight, metadata=INGREDIENT_DICTIONARY.values())
+writer.add_embedding(tt.embed.weight, metadata=INGREDIENT_DICTIONARY.values(), metadata_header=["ingredient"])
 writer.close()
