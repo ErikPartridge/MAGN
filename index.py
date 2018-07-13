@@ -74,7 +74,7 @@ class TasteTester(nn.Module):
         return x
       
       
-tt = TasteTester(INPUT_SIZE, 150)
+tt = TasteTester(30, 150)
 
 criterion = nn.MSELoss()
 optimizer = optim.Adamax(tt.parameters())
