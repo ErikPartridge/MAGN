@@ -12,7 +12,7 @@ writer = SummaryWriter()
 # the amount per ingredient gets encoded into a single line 
 # then each flavor 
 
-INPUT_SIZE = 100
+INPUT_SIZE = 105
 
 INGREDIENT_EMBEDDING_SIZE = 20
 class TasteTester(nn.Module):
