@@ -82,7 +82,7 @@ optimizer = optim.Adamax(tt.parameters())
 
 for epoch in range(40):  # loop over the dataset multiple times
     running_loss = 0.0
-    for i in range(len(INGREDIENT_DICTIONARY)):
+    for i in range(75 ):
         # zero the parameter gradients
         optimizer.zero_grad()
         data = rcps[i]
