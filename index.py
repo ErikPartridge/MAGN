@@ -12,7 +12,7 @@ writer = SummaryWriter()
 # the amount per ingredient gets encoded into a single line 
 # then each flavor 
 
-INPUT_SIZE = 105
+INPUT_SIZE = 101
 
 INGREDIENT_EMBEDDING_SIZE = 20
 class TasteTester(nn.Module):
@@ -74,6 +74,7 @@ for recipe in rcp:
   rcps.append(np.array(temp))
 
 rcps = np.array(rcps)
+rcps = rcps/rcps.sum(axis=1)[:,None]
 ys = torch.from_numpy((np.array(targets) - 3.5) / 1.4)
 print(ys)
 print(len(INGREDIENT_DICTIONARY))
