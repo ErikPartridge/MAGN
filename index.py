@@ -87,3 +87,6 @@ for epoch in range(40):  # loop over the dataset multiple times
         optimizer.step()
         
 print(tt.embed.weight)
+
+writer.add_embedding(tt.embed.weight, metadata=None)
+writer.close()
