@@ -57,6 +57,8 @@ for recipe in rcp:
   temp = [[],[]]
   for k in recipe["ingredients"]:
     key = k.encode("ascii", errors="ignore").decode()
+    if "McCormick" in key:
+        key = key.split()[1].lower()
     if key in INGREDIENT_DICTIONARY:
       temp[0].append(INGREDIENT_DICTIONARY[key])
       temp[1].append(recipe["ingredients"][k])
