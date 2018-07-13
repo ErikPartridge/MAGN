@@ -6,7 +6,9 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torch.autograd import Variable
 import torch.optim as optim
+from tensorboardX import SummaryWriter
 
+writer = SummaryWriter()
 # the amount per ingredient gets encoded into a single line 
 # then each flavor 
 
