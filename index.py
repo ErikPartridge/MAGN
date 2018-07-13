@@ -59,12 +59,12 @@ for recipe in rcp:
     key = k.encode("ascii", errors="ignore").decode()
     if key in INGREDIENT_DICTIONARY:
       temp[0].append(INGREDIENT_DICTIONARY[key])
-      temp[1].append(recipe["ingredients"][key])
+      temp[1].append(recipe["ingredients"][k])
     else:
       INGREDIENT_DICTIONARY[key] = MAX_INDEX + 1
       MAX_INDEX = MAX_INDEX + 1
       temp[0].append(INGREDIENT_DICTIONARY[key])
-      temp[1].append(recipe["ingredients"][key])
+      temp[1].append(recipe["ingredients"][k])
   temp[0] = np.pad(np.array(temp[0]), (0, 20 - len(temp[0])), mode="constant")
   temp[1] = np.pad(np.array(temp[1]), (0, 20 - len(temp[1])), mode="constant")
   rcps.append(np.array(temp))
