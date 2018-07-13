@@ -56,7 +56,7 @@ for recipe in rcp:
   targets.append(recipe["rating"])
   temp = [[],[]]
   for k in recipe["ingredients"]:
-    key = k.encode('ascii',errors='ignore')
+    key = k.encode("ascii", errors="ignore").decode()
     if key in INGREDIENT_DICTIONARY:
       temp[0].append(INGREDIENT_DICTIONARY[key])
       temp[1].append(recipe["ingredients"][key])
