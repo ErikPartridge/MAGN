@@ -90,5 +90,5 @@ for epoch in range(40):  # loop over the dataset multiple times
         
 print(tt.embed.weight)
 
-writer.add_embedding(tt.embed.weight, metadata=None)
+writer.add_embedding(tt.embed.weight, metadata=INGREDIENT_DICTIONARY.values())
 writer.close()
